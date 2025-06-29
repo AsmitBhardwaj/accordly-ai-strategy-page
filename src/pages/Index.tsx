@@ -1,8 +1,6 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { ArrowDown, ArrowRight, Users, Mail } from 'lucide-react';
 import HeroSection from '@/components/HeroSection';
 import FeatureSection from '@/components/FeatureSection';
 import DemoSection from '@/components/DemoSection';
@@ -18,19 +16,16 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen bg-white text-black">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-white/10">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="text-2xl font-bold text-gradient">
-            Accordly
+          <div className="text-2xl font-black">
+            ACCORDLY
           </div>
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">Features</a>
-            <a href="#demo" className="text-muted-foreground hover:text-foreground transition-colors">Demo</a>
-            <a href="#testimonials" className="text-muted-foreground hover:text-foreground transition-colors">Testimonials</a>
-            <Button variant="outline" size="sm">
-              Join Beta
+            <Button variant="outline" className="border-2 border-black text-black hover:bg-black hover:text-white font-bold rounded-none">
+              LOGIN
             </Button>
           </div>
         </div>
@@ -42,10 +37,10 @@ const Index = () => {
       {/* Feature Section */}
       <FeatureSection />
 
-      {/* Demo Section */}
+      {/* Demo Section (now Testimonials) */}
       <DemoSection />
 
-      {/* Testimonial Section */}
+      {/* Testimonial Section (now CTA) */}
       <TestimonialSection />
 
       {/* Email Capture Section */}

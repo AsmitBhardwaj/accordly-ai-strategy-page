@@ -3,30 +3,28 @@ import { useState, useEffect } from 'react';
 
 const features = [
   {
-    icon: '🕵️‍♂️',
-    title: 'Live Legal Case Intelligence',
-    description: 'Scrapes new court rulings daily. Matches them to your matter. Suggests arguments, strategies, and clauses you can use.',
-    highlight: true
+    title: 'Clause Risk Scoring',
+    description: 'Identify risky language with contextual alerts'
   },
   {
-    icon: '✍️',
-    title: 'AI-Powered Contract Drafting',
-    description: 'Generate comprehensive contracts with industry-specific clauses and real-time legal precedent integration.'
+    title: 'AI Redlining',
+    description: 'Smart redlines based on deal type and structure'
   },
   {
-    icon: '🔍',
-    title: 'Clause Risk Scoring & Detection',
-    description: 'Automatically identify high-risk clauses and get AI-powered recommendations for safer alternatives.'
+    title: 'Clause Benchmarking',
+    description: 'Compare terms to market norms by industry and geography'
   },
   {
-    icon: '✒️',
-    title: 'Smart Redlining with Best Practices',
-    description: 'Intelligent contract review with suggestions based on current legal standards and recent case outcomes.'
+    title: 'Contract Lifecycle Dashboard',
+    description: 'Track versions, deadlines, and renewals'
   },
   {
-    icon: '🔁',
-    title: 'Contract Lifecycle Tracking',
-    description: 'Monitor renewals, status changes, and important deadlines with automated alerts and reminders.'
+    title: 'Live Legal Intelligence',
+    description: 'Surface clause trends and negotiation patterns'
+  },
+  {
+    title: 'Works in Microsoft Word',
+    description: 'Draft, edit, and review contracts directly in Word'
   }
 ];
 
@@ -57,17 +55,13 @@ const FeatureSection = () => {
   }, []);
 
   return (
-    <section id="features" className="py-20 px-6">
+    <section className="py-24 px-6 bg-white">
       <div className="container mx-auto max-w-6xl">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-gradient">Intelligent Legal Tools</span>
+        <div className="text-center mb-20">
+          <h2 className="text-5xl md:text-6xl font-black mb-4 text-black">
+            WHAT ACCORDLY DELIVERS
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            From case research to contract management, Accordly handles the complex legal work 
-            so you can focus on strategy and client relationships.
-          </p>
         </div>
 
         {/* Features Grid */}
@@ -76,23 +70,15 @@ const FeatureSection = () => {
             <div
               key={index}
               data-index={index}
-              className={`feature-card glass-card p-8 rounded-2xl hover-lift transition-all duration-700 ${
-                feature.highlight ? 'ring-2 ring-primary/30 bg-primary/5' : ''
-              } ${
+              className={`feature-card border-4 border-black p-8 bg-white transition-all duration-700 hover:bg-black hover:text-white ${
                 visibleFeatures[index] ? 'animate-slide-up' : 'opacity-0'
               }`}
-              style={{ animationDelay: `${index * 150}ms` }}
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="text-4xl mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-bold mb-4 text-foreground">
+              <h3 className="text-xl font-black mb-3 uppercase tracking-wide">
                 {feature.title}
-                {feature.highlight && (
-                  <span className="ml-2 text-xs bg-primary/20 text-primary px-2 py-1 rounded-full">
-                    FLAGSHIP
-                  </span>
-                )}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-base leading-relaxed">
                 {feature.description}
               </p>
             </div>
