@@ -30,10 +30,10 @@ const TestimonialSection = () => {
               DRAFT WITH ACCORDLY.
             </h2>
             <p className="text-xl text-gray-300 mb-12 font-bold">
-              Built for precision. Powered by AI. Made for Word.
+              Precision meets compliance. Powered by AI. Embedded in Word.
             </p>
             <button className="border-4 border-white bg-white text-black hover:bg-black hover:text-white px-12 py-6 text-xl font-bold transition-all duration-300 transform hover:scale-105">
-              SCHEDULE A DEMO
+              REQUEST EARLY ACCESS
             </button>
           </div>
         </div>

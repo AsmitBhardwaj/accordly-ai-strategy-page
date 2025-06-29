@@ -36,10 +36,10 @@ const EmailCaptureSection = () => {
             <h2 className="text-4xl md:text-5xl font-black mb-8 text-white">
               JOIN THE FUTURE
             </h2>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-4">
               <Input
                 type="email"
-                placeholder="your@email.com"
+                placeholder="Enter work email to join private beta"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="flex-1 h-14 px-4 border-4 border-white rounded-none bg-black text-white placeholder:text-gray-400 focus:outline-none focus:ring-0 focus:border-white"
@@ -49,9 +49,12 @@ const EmailCaptureSection = () => {
                 type="submit"
                 className="h-14 px-8 bg-white text-black border-4 border-white hover:bg-black hover:text-white font-bold rounded-none transition-all duration-300 transform hover:scale-105"
               >
-                SUBMIT
+                REQUEST ACCESS
               </Button>
             </div>
+            <p className="text-sm text-gray-400 mt-4">
+              We won't spam. Just early access + legal AI insights.
+            </p>
           </form>
         )}
       </div>

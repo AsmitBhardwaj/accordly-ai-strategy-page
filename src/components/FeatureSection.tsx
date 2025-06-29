@@ -4,27 +4,28 @@ import { useState, useEffect } from 'react';
 const features = [
   {
     title: 'Clause Risk Scoring',
-    description: 'Identify risky language with contextual alerts'
+    description: 'Identify risky language with contextual alerts and suggested alternatives'
   },
   {
     title: 'AI Redlining',
-    description: 'Smart redlines based on deal type and structure'
+    description: 'Suggests inline changes based on past negotiations and deal structure'
   },
   {
     title: 'Clause Benchmarking',
-    description: 'Compare terms to market norms by industry and geography'
+    description: 'Instantly compare any term to market-standard clauses by industry and region'
   },
   {
     title: 'Contract Lifecycle Dashboard',
-    description: 'Track versions, deadlines, and renewals'
+    description: 'Track versions, deadlines, and renewals with automated alerts'
   },
   {
     title: 'Live Legal Intelligence',
-    description: 'Surface clause trends and negotiation patterns'
+    description: 'Surface clause trends and negotiation patterns from recent deals'
   },
   {
     title: 'Works in Microsoft Word',
-    description: 'Draft, edit, and review contracts directly in Word'
+    description: 'Draft, edit, and review contracts directly in Word - no new tools to learn',
+    highlighted: true
   }
 ];
 
@@ -70,7 +71,9 @@ const FeatureSection = () => {
             <div
               key={index}
               data-index={index}
-              className={`feature-card border-4 border-white p-8 bg-black transition-all duration-700 hover:bg-white hover:text-black ${
+              className={`feature-card border-4 border-white p-8 transition-all duration-700 hover:bg-white hover:text-black ${
+                feature.highlighted ? 'bg-gray-900 text-white' : 'bg-black text-white'
+              } ${
                 visibleFeatures[index] ? 'animate-slide-up' : 'opacity-0'
               }`}
               style={{ animationDelay: `${index * 100}ms` }}
