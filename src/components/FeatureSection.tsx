@@ -55,11 +55,11 @@ const FeatureSection = () => {
   }, []);
 
   return (
-    <section className="py-24 px-6 bg-white">
+    <section className="py-24 px-6 bg-black">
       <div className="container mx-auto max-w-6xl">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-black mb-4 text-black">
+          <h2 className="text-5xl md:text-6xl font-black mb-4 text-white">
             WHAT ACCORDLY DELIVERS
           </h2>
         </div>
@@ -70,7 +70,7 @@ const FeatureSection = () => {
             <div
               key={index}
               data-index={index}
-              className={`feature-card border-4 border-black p-8 bg-white transition-all duration-700 hover:bg-black hover:text-white ${
+              className={`feature-card border-4 border-white p-8 bg-black transition-all duration-700 hover:bg-white hover:text-black ${
                 visibleFeatures[index] ? 'animate-slide-up' : 'opacity-0'
               }`}
               style={{ animationDelay: `${index * 100}ms` }}

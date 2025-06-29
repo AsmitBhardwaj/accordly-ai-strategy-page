@@ -10,22 +10,22 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 pt-20 bg-white">
+    <section className="min-h-screen flex items-center justify-center px-6 pt-20 bg-black">
       <div className="text-center max-w-4xl mx-auto">
         {/* Main Logo/Brand */}
         <div className={`transition-all duration-1000 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
-          <h1 className="text-8xl md:text-9xl font-black mb-8 text-black tracking-tight">
+          <h1 className="text-8xl md:text-9xl font-black mb-8 text-white tracking-tight">
             ACCORDLY
           </h1>
         </div>
 
         {/* Tagline */}
         <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
-          <div className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
+          <div className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
             The Future of Law,<br />
             Delivered in Real Time.
           </div>
-          <div className="text-lg md:text-xl text-gray-600 mb-12 leading-relaxed">
+          <div className="text-lg md:text-xl text-gray-300 mb-12 leading-relaxed">
             Let AI surface the rulings,<br />
             write the redlines,<br />
             and whisper the strategy.
@@ -37,7 +37,7 @@ const HeroSection = () => {
           <Button 
             size="lg" 
             variant="outline"
-            className="border-4 border-black text-black hover:bg-black hover:text-white px-12 py-6 text-xl font-bold rounded-none transition-all duration-300"
+            className="border-4 border-white text-white hover:bg-white hover:text-black px-12 py-6 text-xl font-bold rounded-none transition-all duration-300"
           >
             REQUEST EARLY ACCESS
           </Button>

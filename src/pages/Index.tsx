@@ -16,15 +16,15 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen bg-black text-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black border-b-4 border-white">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="text-2xl font-black">
+          <div className="text-2xl font-black text-white">
             ACCORDLY
           </div>
           <div className="hidden md:flex items-center space-x-8">
-            <Button variant="outline" className="border-2 border-black text-black hover:bg-black hover:text-white font-bold rounded-none">
+            <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-black font-bold rounded-none">
               LOGIN
             </Button>
           </div>
