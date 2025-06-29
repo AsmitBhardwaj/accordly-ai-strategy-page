@@ -45,32 +45,14 @@ const EmailCaptureSection = () => {
               We'll be in touch soon.
             </p>
             <div className="text-sm text-green-400 bg-green-900 border border-green-400 p-4 rounded">
-              ✅ Welcome to the future of legal AI
+              Welcome to the future of legal AI
             </div>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="text-center">
-            <h2 className="text-4xl md:text-5xl font-black mb-8 text-white">
+            <h2 className="text-4xl md:text-5xl font-black mb-12 text-white">
               JOIN THE FUTURE
             </h2>
-            
-            {/* Benefits List */}
-            <div className="mb-8 text-left max-w-md mx-auto">
-              <div className="text-sm text-gray-300 space-y-2">
-                <div className="flex items-center">
-                  <span className="text-green-400 mr-2">✅</span>
-                  Private beta access
-                </div>
-                <div className="flex items-center">
-                  <span className="text-green-400 mr-2">✅</span>
-                  Legal AI insights & reports
-                </div>
-                <div className="flex items-center">
-                  <span className="text-green-400 mr-2">✅</span>
-                  Early access to new features
-                </div>
-              </div>
-            </div>
 
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-4">
               <Input

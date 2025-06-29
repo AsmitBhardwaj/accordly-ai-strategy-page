@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button';
 import HeroSection from '@/components/HeroSection';
 import SocialProofSection from '@/components/SocialProofSection';
 import FeatureSection from '@/components/FeatureSection';
-import UseCaseSection from '@/components/UseCaseSection';
 import DemoSection from '@/components/DemoSection';
 import TestimonialSection from '@/components/TestimonialSection';
 import EmailCaptureSection from '@/components/EmailCaptureSection';
@@ -41,9 +40,6 @@ const Index = () => {
 
       {/* Feature Section */}
       <FeatureSection />
-
-      {/* Use Case Section */}
-      <UseCaseSection />
 
       {/* Demo Section (now Testimonials) */}
       <DemoSection />
