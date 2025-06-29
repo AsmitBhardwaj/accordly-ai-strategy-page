@@ -4,33 +4,40 @@ import { useState, useEffect } from 'react';
 const features = [
   {
     title: 'Clause Risk Scoring',
-    description: 'Identify risky language with contextual alerts and suggested alternatives'
+    description: 'Identify risky language with contextual alerts and suggested alternatives',
+    example: '⚠️ Uncapped indemnity – outside market range (Red Flag)'
   },
   {
     title: 'AI Redlining',
-    description: 'Suggests inline changes based on past negotiations and deal structure'
+    description: 'Suggests inline changes based on past negotiations and deal structure',
+    example: '✏️ Suggested edit: "shall" → "will" (market standard)'
   },
   {
     title: 'Clause Benchmarking',
-    description: 'Instantly compare any term to market-standard clauses by industry and region'
+    description: 'Instantly compare any term to market-standard clauses by industry and region',
+    example: '📊 Term is 15% above market median for SaaS agreements'
   },
   {
     title: 'Contract Lifecycle Dashboard',
-    description: 'Track versions, deadlines, and renewals with automated alerts'
+    description: 'Track versions, deadlines, and renewals with automated alerts',
+    example: '📅 Renewal deadline in 30 days - auto-alert sent'
   },
   {
     title: 'Live Legal Intelligence',
-    description: 'Surface clause trends and negotiation patterns from recent deals'
+    description: 'Surface clause trends and negotiation patterns from recent deals',
+    example: '📈 This clause accepted in 78% of Q4 negotiations'
   },
   {
     title: 'Works in Microsoft Word',
     description: 'Draft, edit, and review contracts directly in Word - no new tools to learn',
-    highlighted: true
+    highlighted: true,
+    example: '💼 Native Word integration - zero learning curve'
   }
 ];
 
 const FeatureSection = () => {
   const [visibleFeatures, setVisibleFeatures] = useState<boolean[]>([]);
+  const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -71,19 +78,26 @@ const FeatureSection = () => {
             <div
               key={index}
               data-index={index}
-              className={`feature-card border-4 border-white p-8 transition-all duration-700 hover:bg-white hover:text-black ${
+              className={`feature-card border-4 border-white p-8 transition-all duration-700 hover:bg-white hover:text-black hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] hover:border-blue-400 hover:scale-105 cursor-pointer ${
                 feature.highlighted ? 'bg-gray-900 text-white' : 'bg-black text-white'
               } ${
                 visibleFeatures[index] ? 'animate-slide-up' : 'opacity-0'
               }`}
               style={{ animationDelay: `${index * 100}ms` }}
+              onMouseEnter={() => setHoveredFeature(index)}
+              onMouseLeave={() => setHoveredFeature(null)}
             >
               <h3 className="text-xl font-black mb-3 uppercase tracking-wide">
                 {feature.title}
               </h3>
-              <p className="text-base leading-relaxed">
+              <p className="text-base leading-relaxed mb-4">
                 {feature.description}
               </p>
+              {hoveredFeature === index && (
+                <div className="text-sm font-mono bg-gray-800 text-green-400 p-3 rounded border animate-fade-in">
+                  {feature.example}
+                </div>
+              )}
             </div>
           ))}
         </div>

@@ -32,7 +32,7 @@ const DemoSection = () => {
         {/* Testimonials */}
         <div className={`transition-all duration-1000 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="border-4 border-white p-8 bg-black transform hover:scale-105 transition-transform duration-300">
+            <div className="border-4 border-white p-8 bg-black transform hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 hover:border-blue-400">
               <blockquote className="text-lg font-mono text-white mb-4">
                 "It's like having a smart associate inside Word."
               </blockquote>
@@ -41,7 +41,7 @@ const DemoSection = () => {
               </cite>
             </div>
             
-            <div className="border-4 border-white p-8 bg-black transform hover:scale-105 transition-transform duration-300">
+            <div className="border-4 border-white p-8 bg-black transform hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 hover:border-blue-400">
               <blockquote className="text-lg font-mono text-white mb-4">
                 "Clause benchmarking saves hours — every time."
               </blockquote>
@@ -50,7 +50,7 @@ const DemoSection = () => {
               </cite>
             </div>
             
-            <div className="border-4 border-white p-8 bg-black transform hover:scale-105 transition-transform duration-300">
+            <div className="border-4 border-white p-8 bg-black transform hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 hover:border-blue-400">
               <blockquote className="text-lg font-mono text-white mb-4">
                 "Finally, a tool that understands how legal teams really work."
               </blockquote>
@@ -62,7 +62,7 @@ const DemoSection = () => {
 
           {/* Additional testimonials row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 max-w-2xl mx-auto">
-            <div className="border-4 border-white p-8 bg-black transform hover:scale-105 transition-transform duration-300">
+            <div className="border-4 border-white p-8 bg-black transform hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 hover:border-blue-400">
               <blockquote className="text-lg font-mono text-white mb-4">
                 "We replaced 80% of legal research with Accordly."
               </blockquote>
@@ -71,7 +71,7 @@ const DemoSection = () => {
               </cite>
             </div>
             
-            <div className="border-4 border-white p-8 bg-black transform hover:scale-105 transition-transform duration-300">
+            <div className="border-4 border-white p-8 bg-black transform hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 hover:border-blue-400">
               <blockquote className="text-lg font-mono text-white mb-4">
                 "Risk scoring caught issues we would have missed."
               </blockquote>

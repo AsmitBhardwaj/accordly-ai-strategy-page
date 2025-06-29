@@ -4,9 +4,24 @@ import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [typedText, setTypedText] = useState('');
+  const fullText = "Let AI surface the rulings, write the redlines, and whisper the strategy.";
 
   useEffect(() => {
     setIsVisible(true);
+    
+    // Typing animation for tagline
+    let index = 0;
+    const typingInterval = setInterval(() => {
+      if (index < fullText.length) {
+        setTypedText(fullText.slice(0, index + 1));
+        index++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 50);
+
+    return () => clearInterval(typingInterval);
   }, []);
 
   return (
@@ -25,10 +40,8 @@ const HeroSection = () => {
             The Future of Law,<br />
             Delivered in Real Time.
           </div>
-          <div className="text-lg md:text-xl text-gray-300 mb-12 leading-relaxed">
-            Let AI surface the rulings,<br />
-            write the redlines,<br />
-            and whisper the strategy.
+          <div className="text-lg md:text-xl text-gray-300 mb-12 leading-relaxed min-h-[80px] font-mono">
+            {typedText}<span className="animate-pulse">|</span>
           </div>
         </div>
 
@@ -37,9 +50,10 @@ const HeroSection = () => {
           <Button 
             size="lg" 
             variant="outline"
-            className="border-4 border-white text-white hover:bg-white hover:text-black px-12 py-6 text-xl font-bold rounded-none transition-all duration-300"
+            className="border-4 border-white text-white hover:bg-white hover:text-black px-12 py-6 text-xl font-bold rounded-none transition-all duration-300 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] hover:border-blue-400 group"
           >
             REQUEST EARLY ACCESS
+            <span className="ml-2 transform group-hover:translate-x-1 transition-transform duration-300">→</span>
           </Button>
         </div>
       </div>
