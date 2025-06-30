@@ -9,13 +9,7 @@ import { useToast } from '@/hooks/use-toast';
 const formSchema = z.object({
   email: z
     .string()
-    .email('Please enter a valid email address')
-    .refine((email) => {
-      const workEmailPattern = /^[^\s@]+@[^\s@]+\.(com|org|edu|gov|net)$/i;
-      const personalDomains = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com'];
-      const domain = email.split('@')[1]?.toLowerCase();
-      return workEmailPattern.test(email) && !personalDomains.includes(domain);
-    }, 'Please enter a work email address'),
+    .email('Please enter a valid email address'),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -53,7 +47,7 @@ const EarlyAccessForm = () => {
                 <FormLabel className="text-white font-bold">Request Early Access</FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="Enter your work email"
+                    placeholder="Enter your email address"
                     className="h-12 bg-black border-2 border-white text-white placeholder:text-gray-400 focus:border-blue-400 rounded-none"
                     {...field}
                   />
