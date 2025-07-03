@@ -25,7 +25,11 @@ const Index = () => {
             ACCORDLY
           </div>
           <div className="hidden md:flex items-center space-x-8">
-            <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-black font-bold rounded-none">
+            <Button 
+              variant="outline" 
+              className="border-2 border-white text-white hover:bg-white hover:text-black font-bold rounded-none"
+              onClick={() => window.location.href = '/login'}
+            >
               LOGIN
             </Button>
           </div>
