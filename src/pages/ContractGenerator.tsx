@@ -188,7 +188,7 @@ NOW, THEREFORE, in consideration of the mutual covenants and agreements containe
 
               {/* Generate Button */}
               <Button
-                className="w-full h-12 bg-accent-blue text-accent-blue-foreground hover:bg-accent-blue/90 font-bold rounded-none text-black"
+                className="w-full h-12 bg-accent-blue text-accent-blue-foreground hover:bg-accent-blue/90 font-bold rounded-none"
                 size="lg"
               >
                 🟩 Generate Contract
