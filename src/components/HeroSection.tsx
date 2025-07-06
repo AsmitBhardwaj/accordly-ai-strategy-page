@@ -4,9 +4,24 @@ import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [typedText, setTypedText] = useState('');
+  const fullText = "Let AI surface the rulings, write the redlines, and whisper the strategy.";
 
   useEffect(() => {
     setIsVisible(true);
+    
+    // Typing animation for subtext
+    let index = 0;
+    const typingInterval = setInterval(() => {
+      if (index < fullText.length) {
+        setTypedText(fullText.slice(0, index + 1));
+        index++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 50);
+
+    return () => clearInterval(typingInterval);
   }, []);
 
   return (
@@ -22,8 +37,8 @@ const HeroSection = () => {
 
         {/* Subtext */}
         <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
-          <div className="text-lg md:text-xl text-gray-300 mb-12 leading-relaxed font-mono tracking-wide">
-            Let AI surface the rulings, write the redlines, and whisper the strategy.
+          <div className="text-lg md:text-xl text-gray-300 mb-12 leading-relaxed font-mono tracking-wide min-h-[80px]">
+            {typedText}<span className="animate-pulse">|</span>
           </div>
         </div>
 
