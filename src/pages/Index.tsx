@@ -18,20 +18,22 @@ const Index = () => {
   const [loading, setLoading] = useState(false);
 
   const generateContract = async () => {
-    const query = `company_1=${encodeURIComponent(company1)}&company_2=${encodeURIComponent(company2)}&scope=${encodeURIComponent(scope)}&jurisdiction=${encodeURIComponent(jurisdiction)}`;
-    setLoading(true);
+  const backendURL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+  const query = `company_1=${encodeURIComponent(company1)}&company_2=${encodeURIComponent(company2)}&scope=${encodeURIComponent(scope)}&jurisdiction=${encodeURIComponent(jurisdiction)}`;
+  setLoading(true);
 
-    try {
-      const res = await fetch(`http://localhost:8000/generate/nda?${query}`);
-      const data = await res.json();
-      setContract(data.contract);
-      setDocxLink(`http://localhost:8000/export/nda-docx?${query}`);
-    } catch (err) {
-      console.error('Failed to generate contract:', err);
-    } finally {
-      setLoading(false);
-    }
-  };
+  try {
+    const res = await fetch(`${backendURL}/generate/nda?${query}`);
+    const data = await res.json();
+    setContract(data.contract);
+    setDocxLink(`${backendURL}/export/nda-docx?${query}`);
+  } catch (err) {
+    console.error('Failed to generate contract:', err);
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   return (
     <div className="min-h-screen bg-black text-white">
