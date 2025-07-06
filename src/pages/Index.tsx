@@ -18,25 +18,6 @@ const Index = () => {
           </div>
           <div className="hidden md:flex items-center space-x-8">
             <Button 
-              variant="ghost" 
-              className="text-white hover:text-blue-400 font-bold"
-              onClick={() => window.location.href = '/generate'}
-            >
-              GENERATE CONTRACT
-            </Button>
-            <Button 
-              variant="ghost" 
-              className="text-white hover:text-blue-400 font-bold"
-            >
-              REVIEW
-            </Button>
-            <Button 
-              variant="ghost" 
-              className="text-white hover:text-blue-400 font-bold"
-            >
-              CLAUSE LIBRARY
-            </Button>
-            <Button 
               variant="outline" 
               className="border-2 border-white text-white hover:bg-white hover:text-black font-bold rounded-none"
               onClick={() => window.location.href = '/login'}
