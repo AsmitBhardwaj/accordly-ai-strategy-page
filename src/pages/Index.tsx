@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import HeroSection from '@/components/HeroSection';
@@ -11,10 +10,29 @@ import Footer from '@/components/Footer';
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [company1, setCompany1] = useState('');
+  const [company2, setCompany2] = useState('');
+  const [scope, setScope] = useState('');
+  const [jurisdiction, setJurisdiction] = useState('USA');
+  const [contract, setContract] = useState('');
+  const [docxLink, setDocxLink] = useState('');
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  const generateContract = async () => {
+    const query = `company_1=${encodeURIComponent(company1)}&company_2=${encodeURIComponent(company2)}&scope=${encodeURIComponent(scope)}&jurisdiction=${encodeURIComponent(jurisdiction)}`;
+
+    try {
+      const res = await fetch(`http://localhost:8000/generate/nda?${query}`);
+      const data = await res.json();
+      setContract(data.contract);
+      setDocxLink(`http://localhost:8000/export/nda-docx?${query}`);
+    } catch (err) {
+      console.error('Failed to generate contract:', err);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -57,6 +75,24 @@ const Index = () => {
 
       {/* Hero Section */}
       <HeroSection />
+
+      {/* Contract Generator Section */}
+      <div className="container mx-auto px-6 py-16">
+        <div className="max-w-2xl mx-auto bg-gray-900 p-6 rounded-xl">
+          <h2 className="text-xl font-bold mb-4">Generate NDA</h2>
+          <input value={company1} onChange={(e) => setCompany1(e.target.value)} placeholder="Company 1" className="w-full p-2 mb-2 bg-gray-800 rounded" />
+          <input value={company2} onChange={(e) => setCompany2(e.target.value)} placeholder="Company 2" className="w-full p-2 mb-2 bg-gray-800 rounded" />
+          <input value={scope} onChange={(e) => setScope(e.target.value)} placeholder="Scope of agreement" className="w-full p-2 mb-2 bg-gray-800 rounded" />
+          <input value={jurisdiction} onChange={(e) => setJurisdiction(e.target.value)} placeholder="Jurisdiction (default: USA)" className="w-full p-2 mb-4 bg-gray-800 rounded" />
+          <Button className="bg-blue-600 hover:bg-blue-700 font-bold py-2 px-4 rounded" onClick={generateContract}>Generate NDA</Button>
+          {contract && (
+            <>
+              <pre className="mt-4 p-4 bg-gray-800 rounded whitespace-pre-wrap">{contract}</pre>
+              <a href={docxLink} className="mt-4 inline-block underline text-blue-400 hover:text-blue-300" target="_blank" rel="noopener noreferrer">Download .docx</a>
+            </>
+          )}
+        </div>
+      </div>
 
       {/* Social Proof Section */}
       <SocialProofSection />
