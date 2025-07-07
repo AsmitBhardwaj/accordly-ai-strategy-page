@@ -48,6 +48,7 @@ const HeroSection = () => {
             size="lg" 
             variant="outline"
             className="border-4 border-white text-white hover:bg-white hover:text-black px-12 py-6 text-xl font-bold rounded-none transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:border-pulse group"
+            onClick={() => document.getElementById('email-capture')?.scrollIntoView({ behavior: 'smooth' })}
           >
             REQUEST EARLY ACCESS
             <span className="ml-2 transform group-hover:translate-x-1 transition-transform duration-300">→</span>

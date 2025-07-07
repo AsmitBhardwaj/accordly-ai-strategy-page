@@ -32,7 +32,10 @@ const TestimonialSection = () => {
             <p className="text-xl text-gray-300 mb-12 font-bold">
               Precision meets compliance. Powered by AI. Embedded in Word.
             </p>
-            <button className="border-4 border-white bg-white text-black hover:bg-black hover:text-white px-12 py-6 text-xl font-bold transition-all duration-300 transform hover:scale-105">
+            <button 
+              className="border-4 border-white bg-white text-black hover:bg-black hover:text-white px-12 py-6 text-xl font-bold transition-all duration-300 transform hover:scale-105"
+              onClick={() => document.getElementById('email-capture')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               REQUEST EARLY ACCESS
             </button>
           </div>

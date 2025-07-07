@@ -4,7 +4,7 @@ import EarlyAccessForm from '@/components/EarlyAccessForm';
 const EmailCaptureSection = () => {
 
   return (
-    <section className="py-24 px-6 bg-gray-900">
+    <section id="email-capture" className="py-24 px-6 bg-gray-900">
       <div className="container mx-auto max-w-2xl text-center">
         <h2 className="text-4xl md:text-5xl font-black mb-12 text-white">
           JOIN THE FUTURE
